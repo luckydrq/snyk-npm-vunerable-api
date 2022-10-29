@@ -12,6 +12,7 @@ function createApp() {
   app.use(bodyParser());
   router.get('/', index);
   router.get('/:pkg/:version', vunerable);
+  router.get('/:scope/:pkg/:version', vunerable);
   app.use(router.routes())
     .use(router.allowedMethods());
 

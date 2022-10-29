@@ -8,7 +8,8 @@ import { jsonFileRootDir } from '../config';
 
 export default async (ctx: Context & RouterParamContext) => {
   try {
-    const { pkg, version } = ctx.params;
+    const pkg = ctx.params.scope ? `${ctx.params.scope}/${ctx.params.pkg}` : ctx.params.pkg;
+    const { version } = ctx.params;
     if (!pkg || !version) {
       throw new Error('Missing package name or version!');
     }
