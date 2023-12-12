@@ -6,3 +6,5 @@ logs
 .*
 !.gitignore
 !.eslintrc
+
+enpm-lock.yaml
